@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>数据渲染</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+	<div class="pic">
+		<ul id="ul">
+		
+		</ul>
+	</div>
+	<script src="libs/jquery-3.3.1.js"></script>
+	<script src="data/list.js"></script>
+</body>
+	<script>
+		// console.log(json);
+		function rendering(json,root){
+			// alert("11")
+			var dataList,
+				item,
+				frag,
+				li,//html
+				p,
+				img,
+				button;
+
+			dataList = json.data.list;
+			// console.log(dataList);
+			frag = document.createDocumentFragment();
+			for(var i = 0;i < dataList.length ;i++){
+				item = dataList[i];
+				// console.log(item);
+				li = cE("li");
+				img = cE("img");
+				button = cE("button");
+				p = cE("p");
+
+				li.appendChild(img);
+				li.appendChild(p);
+				li.appendChild(button);
+
+				li.className = "li";
+				img.src = item.image;
+				p.className = "tit";
+				p.innerHTML = item.title;
+				button.className = "button";
+				button.innerHTML = item.userId;
+
+				// console.log(li);
+				frag.appendChild(li);
+			}
+			// console.log(frag);
+			root.appendChild(frag);
+		}
+		function cE(tag){
+			return document.createElement(tag);
+		}
+		var oUl = document.getElementById("ul");
+		rendering(json,oUl);
+
+	</script>
+</html>

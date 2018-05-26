@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>轮播图插件</title>
+	<link rel="stylesheet" type="text/css" href="style/banner.css">
+</head>
+<body>
+	<div class="banner">
+		<div class="img">
+				<img class="banner-img" style="background:url(http://img1.liwuyou.com/data/afficheimg/20170919nxpbyx.jpg) center;">
+				<img style="background:url(http://www.liwuyou.com/data/afficheimg/20160908cdrswo.jpg) center;">
+				<img style="background: url(http://www.liwuyou.com/data/afficheimg/20160908aoxwfb.jpg) center;">
+				<img style="background:url(http://www.liwuyou.com/data/afficheimg/20161123tzswot.jpg) center;">
+				<img style="background: url(http://www.liwuyou.com/data/afficheimg/20160908vlyhsc.jpg) center;">
+			</div>
+		<!-- 分页按钮 -->
+		<div class="pagination">
+			<!-- <span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span> -->
+		</div>
+		<!-- 上一张 下一张 按钮 -->
+		<div class="prev">prev</div>
+		<div class="next">next</div>
+	</div>
+<script src="libs/jquery-3.3.1.js"></script>
+<script src="libs/banner.js"></script>
+<script>
+
+		$(function () {
+			$(".banner").banner(".img", {
+					navigation: {
+	                    nextEl: '.next',
+	                    prevEl: '.prev',
+               		 },
+					pagination: {
+						el: ".pagination"
+					},
+					animate: "slide",
+					autoPlay: true
+			})
+	
+		})
+
+		
+</script>
+
+</body>
+</html>

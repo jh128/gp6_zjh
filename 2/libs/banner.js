@@ -129,7 +129,7 @@
 				"slideFadeInit":function(){
 					this.bannerItem.eq(this.prev)
 					.css({
-						zIndex:1s
+						zIndex:1
 					})
 					// .end()
 					.siblings()
